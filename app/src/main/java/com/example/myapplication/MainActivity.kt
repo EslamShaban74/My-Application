@@ -18,10 +18,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // btn.setOnClickListener {
-        //  Toast.makeText(this,"hello",Toast.LENGTH_LONG).show()
-        // }
-
         tv.animate()
             .alpha(0.5f)
             .scaleXBy(0.5f)
