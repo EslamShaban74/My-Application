@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             .rotation(360f)
             .translationY(20f)
             .duration=2000
-
     }
 
     fun press(view: View) {
