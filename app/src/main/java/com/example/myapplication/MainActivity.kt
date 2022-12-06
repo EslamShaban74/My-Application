@@ -25,7 +25,10 @@ class MainActivity : AppCompatActivity() {
             .rotation(360f)
             .translationY(20f)
             .duration=2000
+
+
     }
+
 
     fun press(view: View) {
         if (view == tv) {
@@ -82,6 +85,11 @@ class MainActivity : AppCompatActivity() {
 
     fun login(view: View) {
         val intent = Intent(this,LoginActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun listView(view: View) {
+        val intent = Intent(this,ListView::class.java)
         startActivity(intent)
     }
 

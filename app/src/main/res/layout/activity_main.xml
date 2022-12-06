@@ -87,6 +87,16 @@
         android:onClick="login"
         android:textColor="#fff" />
 
+    <Button
+        android:id="@+id/listViewBtn"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_back"
+        android:text="@string/listview"
+        android:onClick="listView"
+        android:textColor="#fff" />
+
 
 
 
