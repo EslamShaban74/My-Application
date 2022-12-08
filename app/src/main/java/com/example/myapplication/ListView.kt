@@ -8,6 +8,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.adapter.CustomAdapter
 import com.example.myapplication.model.Fruits
 import kotlinx.android.synthetic.main.activity_list_view.*
@@ -33,19 +35,22 @@ class ListView : AppCompatActivity() {
         fruitList.add(Fruits("Apple","desc1",R.drawable.apple))
         fruitList.add(Fruits("Apple","desc1",R.drawable.apple))
         val myAdapter = CustomAdapter(this,fruitList)
-        listView.adapter = myAdapter
-        listView.setOnItemClickListener { _, view, _, _ ->
-            val v = view.textView2 as TextView
-
-            val  intent = Intent(this,ListViewDetails::class.java)
-            if(v.text == "Carrot"){
-                Toast.makeText(this, "${v.text}", Toast.LENGTH_LONG).show()
-            }else{
-                intent.putExtra("name",v.text)
-                startActivity(intent)
-            }
+            myRecycler.layoutManager = LinearLayoutManager(this,RecyclerView.VERTICAL,false)
+            myRecycler.adapter = myAdapter
 
 
-        }
+//        listView.setOnItemClickListener { _, view, _, _ ->
+//            val v = view.textView2 as TextView
+//
+//            val  intent = Intent(this,ListViewDetails::class.java)
+//            if(v.text == "Carrot"){
+//                Toast.makeText(this, "${v.text}", Toast.LENGTH_LONG).show()
+//            }else{
+//                intent.putExtra("name",v.text)
+//                startActivity(intent)
+//            }
+//
+//
+//        }
     }
 }

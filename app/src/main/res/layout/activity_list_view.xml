@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ListView">
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView"
+        android:id="@+id/myRecycler"
         android:layout_margin="20dp"
         />
 
