@@ -14,4 +14,6 @@
     <string name="enter_your_email">Enter your email</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="listview">ListView</string>
+    <string name="grid_view">Grid View</string>
+    <string name="spinner">Spinner</string>
 </resources>

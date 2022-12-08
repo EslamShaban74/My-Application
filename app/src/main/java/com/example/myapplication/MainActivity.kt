@@ -5,6 +5,8 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
@@ -27,6 +29,16 @@ class MainActivity : AppCompatActivity() {
             .duration=2000
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        Toast.makeText(this, item.title.toString(),Toast.LENGTH_LONG).show()
+        return true
     }
 
 
@@ -90,6 +102,15 @@ class MainActivity : AppCompatActivity() {
 
     fun listView(view: View) {
         val intent = Intent(this,ListView::class.java)
+        startActivity(intent)
+    }
+
+    fun gridView(view: View) {
+        val intent = Intent(this,GridActivity::class.java)
+        startActivity(intent)
+    }
+    fun spinner(view: View) {
+        val intent = Intent(this,SpinnerActivity::class.java)
         startActivity(intent)
     }
 
