@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="listen"
+            type="com.example.myapplication.fragments.ChatFragment" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.ChatFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/helloTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:onClick="@{listen.press}"
+                    android:text="@string/hello_android"
+                    android:textColor="#ff00" />
+
+                <Button
+                    android:id="@+id/btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/press"
+                    android:onClick="@{listen.press}"
+                    android:layout_margin="16dp"
+                    android:textColor="#fff" />
+
+                <EditText
+                    android:id="@+id/webSiteEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/enter_website_to_open" />
+
+                <Button
+                    android:id="@+id/open_in_browser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/button_back"
+                    android:text="@string/open_in_browser"
+                    android:onClick="@{listen.openWebSiteInBrowser}"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/open_web_view"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/open_web_view"
+                    android:onClick="@{listen.openWebsiteInWebView}"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/move_to_camera_screen"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/go_to_camera_screen"
+                    android:onClick="@{listen.goToCameraScreen}"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/rateApp"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/rate_app"
+                    android:onClick="@{listen.rateApp}"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/login"
+                    android:onClick="@{listen.login}"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/listViewBtn"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/listview"
+                    android:onClick="@{listen.listView}"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/gridViewBtn"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/grid_view"
+                    android:onClick="@{listen.gridView}"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/spinnerBtn"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_back"
+                    android:text="@string/spinner"
+                    android:onClick="@{listen.spinner}"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>
