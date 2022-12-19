@@ -113,4 +113,6 @@
     <string name="status">Status</string>
     <string name="favourites">Favourites</string>
     <string name="settings">Settings</string>
+    <string name="snackBar">Snack Bar</string>
+    <string name="actionSnackBar">Action Snack Bar</string>
 </resources>

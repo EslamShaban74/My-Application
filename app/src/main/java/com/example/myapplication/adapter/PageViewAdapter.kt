@@ -35,10 +35,10 @@ class PageViewAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
                 title = "Chats"
             }
             1-> {
-                title = "Status"
+                title = "Calls"
             }
             2-> {
-                title = "Calls"
+                title = "Status"
             }
         }
         return title!!
