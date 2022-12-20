@@ -1,11 +1,15 @@
 package com.example.myapplication.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentCallsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +39,10 @@ class CallsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calls, container, false)
+        val binding: FragmentCallsBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_calls, container, false)
+        binding.listen = this
+        return binding.root
     }
 
     companion object {
@@ -56,5 +63,26 @@ class CallsFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun call(view: View) {
+
+        /// you can make alert dialog by make xml layout and inflate it with alert dialog builder
+        /// val view = LayoutInflater.from(activity).inflate(R.layout.x,null , false)
+        /// alertBuilder.setView(view)
+
+
+        val alertBuilder = AlertDialog.Builder(activity)
+
+        alertBuilder.setTitle("Call")
+        alertBuilder.setMessage("Do you want to make Call ")
+        alertBuilder.setPositiveButton("Call") { _, _ ->
+            Toast.makeText(requireActivity(), "Calling ..", Toast.LENGTH_LONG).show()
+        }
+        alertBuilder.setNegativeButton("Cancel") { _, _ ->
+
+        }
+        val alertDialog = alertBuilder.create()
+        alertDialog.show()
     }
 }

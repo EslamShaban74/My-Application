@@ -49,7 +49,7 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding : FragmentChatBinding =
+        val binding :FragmentChatBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_chat,container,false)
         binding.listen = this // your fragment
         return  binding.root

@@ -7,7 +7,7 @@ import com.example.myapplication.fragments.CallsFragment
 import com.example.myapplication.fragments.ChatFragment
 import com.example.myapplication.fragments.StatusFragment
 
-class PageViewAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class PageViewAdapter  (fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getCount(): Int {
         return 3
     }
