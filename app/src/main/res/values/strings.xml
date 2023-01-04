@@ -116,4 +116,6 @@
     <string name="snackBar">Snack Bar</string>
     <string name="actionSnackBar">Action Snack Bar</string>
     <string name="call">Call</string>
+    <string name="logout">Logout</string>
+    <string name="you_are_signed_in">You are signed in !</string>
 </resources>

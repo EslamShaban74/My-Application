@@ -1,10 +1,13 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() ,TextWatcher{
@@ -16,12 +19,23 @@ class LoginActivity : AppCompatActivity() ,TextWatcher{
         email.addTextChangedListener(this)
         password.addTextChangedListener(this)
 
+
+
+
         loginBtn.setOnClickListener{
-            if( progressBar.visibility == View.VISIBLE){
+
+            progressBar.visibility = View.VISIBLE
+            val handler = Handler()
+            handler.postDelayed(Runnable {
                 progressBar.visibility = View.GONE
-            }else{
-                progressBar.visibility = View.VISIBLE
-            }
+                val sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE)
+                val sharedPrefs = sharedPreferences.edit()
+                sharedPrefs.putString("userName",email.text.toString())
+                sharedPrefs.putString("password",password.text.toString())
+                sharedPrefs.apply()
+                val intent = Intent(this,LogoutActivity::class.java)
+                startActivity(intent)
+            }, 3000)
 
         }
     }

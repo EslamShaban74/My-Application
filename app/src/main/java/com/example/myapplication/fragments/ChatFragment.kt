@@ -1,18 +1,19 @@
 package com.example.myapplication.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.example.myapplication.*
 import com.example.myapplication.databinding.FragmentChatBinding
 import kotlinx.android.synthetic.main.fragment_chat.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,10 +50,10 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding :FragmentChatBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_chat,container,false)
+        val binding: FragmentChatBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_chat, container, false)
         binding.listen = this // your fragment
-        return  binding.root
+        return binding.root
     }
 
     companion object {
@@ -74,6 +75,7 @@ class ChatFragment : Fragment() {
                 }
             }
     }
+
     fun press(view: View) {
         if (view == helloTV) {
             Toast.makeText(activity, "Hello text view", Toast.LENGTH_LONG).show()
@@ -88,9 +90,9 @@ class ChatFragment : Fragment() {
 
         /// to move to another activity you must use category that you added in manifest
 
-        val intent =Intent("com.eslam.web")
+        val intent = Intent("com.eslam.web")
         intent.addCategory("DATA")
-        intent.putExtra("site",site)
+        intent.putExtra("site", site)
         startActivity(intent)
 
         /// move to screen and return with data using override method onActivityResult
@@ -106,7 +108,7 @@ class ChatFragment : Fragment() {
     }
 
     fun goToCameraScreen(view: View) {
-        val  intent = Intent(requireActivity(), CameraActivity::class.java)
+        val intent = Intent(requireActivity(), CameraActivity::class.java)
         startActivity(intent)
     }
 
@@ -117,9 +119,10 @@ class ChatFragment : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = uri
             startActivity(intent)
-        }catch (e:Exception){
+        } catch (e: Exception) {
 
-            val uri = Uri.parse("http://play.google.com/store/apps/details?id ${requireActivity().packageName}")
+            val uri =
+                Uri.parse("http://play.google.com/store/apps/details?id ${requireActivity().packageName}")
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = uri
             startActivity(intent)
@@ -128,12 +131,22 @@ class ChatFragment : Fragment() {
     }
 
     fun login(view: View) {
-        val intent = Intent(requireActivity(), LoginActivity::class.java)
-        startActivity(intent)
+        val preferences = this.requireActivity().getSharedPreferences("Login", Context.MODE_PRIVATE)
+        val userName: String? = preferences.getString("userName", null)
+        val password: String? = preferences.getString("password", null)
+
+        if (userName !=null  && password != null) {
+            val intent = Intent(requireActivity(), LogoutActivity::class.java)
+            startActivity(intent)
+        }else{
+            val intent = Intent(requireActivity(), LoginActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     fun listView(view: View) {
-        val intent = Intent(requireActivity(),ListView::class.java)
+        val intent = Intent(requireActivity(), ListView::class.java)
         startActivity(intent)
     }
 
@@ -141,8 +154,9 @@ class ChatFragment : Fragment() {
         val intent = Intent(requireActivity(), GridActivity::class.java)
         startActivity(intent)
     }
+
     fun spinner(view: View) {
-        val intent = Intent(requireActivity(),SpinnerActivity::class.java)
+        val intent = Intent(requireActivity(), SpinnerActivity::class.java)
         startActivity(intent)
     }
 
