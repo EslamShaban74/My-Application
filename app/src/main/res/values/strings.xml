@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">First</string>
+    <string name="app_name">Native Summary</string>
     <string name="hello_android">Hello android!</string>
     <string name="press">Press</string>
     <string name="get_age">get age</string>
@@ -118,4 +118,10 @@
     <string name="call">Call</string>
     <string name="logout">Logout</string>
     <string name="you_are_signed_in">You are signed in !</string>
+    <string name="enter_mobile_phone">Enter mobile phone</string>
+    <string name="save" >Save</string>
+    <string name="read" >Read</string>
+    <string name="getMyLocation">Get my location</string>
+    <string name="SavetoFirebase">Save to firebase</string>
+    <string name="sign_up">Sign up</string>
 </resources>

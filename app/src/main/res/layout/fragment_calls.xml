@@ -13,15 +13,63 @@
         android:layout_height="match_parent"
         tools:context=".fragments.CallsFragment">
 
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:hint="@string/enter_mobile_phone"
+            />
+
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phoneEditText"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:onClick="@{listen.save}"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/read"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/save"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:onClick="@{listen.read}"
+            android:text="@string/read" />
+        <Button
+            android:id="@+id/saveToFirebase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/read"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:onClick="@{listen.saveToFirebase}"
+            android:text="@string/SavetoFirebase" />
+
         <Button
             android:id="@+id/call"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/call"
-            android:layout_centerInParent="true"
+            android:layout_below="@+id/saveToFirebase"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
             android:onClick="@{listen.call}"
-            />
+            android:text="@string/call" />
+
+        <Button
+            android:id="@+id/getLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/call"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:onClick="@{listen.getMyLocation}"
+            android:text="@string/getMyLocation" />
 
 
     </RelativeLayout>
